@@ -1,4 +1,5 @@
-// Update with your config settings.
+require("dotenv").config();
+const { DATABASE_URL } = process.env;
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
@@ -6,10 +7,8 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
-    connection: {
-      filename: './dev.sqlite3'
-    }
+    client: 'postgresql',
+    connection: DATABASE_URL,
   },
 
   staging: {
