@@ -14,5 +14,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable("user_id");
+  return knex.schema.dropTable("quiz_results");
 };
