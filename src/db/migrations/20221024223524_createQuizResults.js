@@ -7,8 +7,9 @@ exports.up = function(knex) {
       .references("id")
       .inTable("users")
       .onDelete("CASCADE");
-    table.text("recommendations");
+    table.text("description");
     table.specificType("recommended_supplement_ids", "integer ARRAY"); 
+    table.timestamps(true, true);
   });
 };
 

@@ -15,8 +15,6 @@ exports.up = function(knex) {
       .onDelete("CASCADE");
     table.float("total_cost");
     table.string("tracking_number");
-    table.datetime("estimated_arrival");
-    table.string("status");
     table.timestamps(true, true);
   });
 };

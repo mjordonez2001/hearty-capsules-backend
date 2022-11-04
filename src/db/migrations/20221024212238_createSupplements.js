@@ -4,11 +4,16 @@ exports.up = function(knex) {
     table.increments("id").primary();
     table.string("name");
     table.text("description");
-    table.string("sku");
     table.string("photo_url");
     table.float("unit_price");
-    table.specificType("category_ids", "integer ARRAY");
-    table.boolean("in_stock");
+    table.specificType("benefits", "string ARRAY");
+    table.integer("category_id");
+    table
+      .foreign("category_id")
+      .references("id")
+      .inTable("categories")
+      .onDelete("CASCADE");
+    table.timestamps(true, true);
   });
 };
 

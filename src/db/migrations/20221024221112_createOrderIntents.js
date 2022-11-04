@@ -8,6 +8,7 @@ exports.up = function(knex) {
       .inTable("users")
       .onDelete("CASCADE");
     table.specificType("cart_item_ids", "integer ARRAY");
+    table.timestamps(true, true);
   });
 };
 

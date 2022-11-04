@@ -8,7 +8,7 @@ exports.up = function(knex) {
       .inTable("supplements")
       .onDelete("CASCADE");
     table.integer("quantity");
-    table.boolean("is_subscription");
+    table.timestamps(true, true);
   });
 };
 
