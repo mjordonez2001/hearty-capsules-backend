@@ -6,7 +6,7 @@ exports.up = function(knex) {
     table.text("description");
     table.string("photo_url");
     table.float("unit_price");
-    table.specificType("benefits", "string ARRAY");
+    table.specificType("benefits", "text ARRAY");
     table.integer("category_id");
     table
       .foreign("category_id")
